@@ -6,10 +6,11 @@ class User(models.Model):
     User
     """
     
-    logon = models.CharField()
+    logon = models.CharField(unique=True)
     name = models.CharField()
     password = models.CharField()
     email = models.EmailField(unique=True)
+    company = models.CharField(max_length=128)
     
 
 class UserSkill(models.Model):
@@ -19,6 +20,7 @@ class UserSkill(models.Model):
     
     user = models.ForeignKey(User)
     skill_level = models.ForeignKey(SkillLevel)
+    current_points = models.IntegerField(default=0) 
     
     class Meta:
         unique_together = (("user", "skill_level"), )

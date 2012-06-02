@@ -66,6 +66,7 @@ class StatusLog(models.Model):
     task = models.ForeignKey(Task)
     status = models.ForeignKey(Status)
     insert_timestamp = models.DateTimeField()
+    message = models.CharField(max_length=4000, null=True)
     
     class Meta:
         unique_together = (("task", "insert_timestamp"), )
