@@ -8,6 +8,8 @@ from ait_app.users.models import User
 class Task(models.Model):
     name = models.CharField(_('Name'),max_length=256)
     description = models.TextField(_('Beschreibung'),blank=True,null=True)
+    created_on = models.DateTimeField(_('Erstellt am'),auto_now_add=True)
+    updated_on = models.DateTimeField(_('Zuletzt gespeichert'),auto_now=True)
     creator = models.ForeignKey(User,related_name='created_tasks',verbose_name=_('Ersteller'))
     worker = models.ForeignKey(User, related_name='worker_tasks',verbose_name=_('Arbeiter'), null=True,blank=True)
     

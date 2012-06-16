@@ -52,10 +52,8 @@ USE_L10N = True
 # Absolute path to the directory that holds media.
 # Example: "/home/media/media.lawrence.com/"
 MEDIA_ROOT = os.path.join(PROJECT_DIR,'site_media')
-
-# URL that handles the media served from MEDIA_ROOT. Make sure to use a
-# trailing slash if there is a path component (optional in other cases).
-# Examples: "http://media.lawrence.com", "http://example.com/media/"
+STATIC_ROOT = os.path.join(PROJECT_DIR,'site_media','static')
+STATIC_URL = '/site_media/static/'
 MEDIA_URL = '/site_media/'
 
 # URL prefix for admin media -- CSS, JavaScript and images. Make sure to use a
@@ -81,7 +79,7 @@ MIDDLEWARE_CLASSES = (
     'django.contrib.messages.middleware.MessageMiddleware',
 )
 
-ROOT_URLCONF = 'ait.urls'
+ROOT_URLCONF = 'ait_app.urls'
 
 TEMPLATE_DIRS = (
     os.path.join(PROJECT_DIR,'ait_app','templates')
@@ -97,6 +95,7 @@ INSTALLED_APPS = (
     'django.contrib.sites',
     'django.contrib.messages',
     'django.contrib.admin',
+    'django.contrib.staticfiles',
     
     'south',
     
