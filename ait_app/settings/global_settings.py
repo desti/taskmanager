@@ -54,6 +54,10 @@ USE_L10N = True
 MEDIA_ROOT = os.path.join(PROJECT_DIR,'site_media')
 STATIC_ROOT = os.path.join(PROJECT_DIR,'site_media','static')
 STATIC_URL = '/site_media/static/'
+STATICFILES_DIRS = (
+    os.path.join(PROJECT_DIR,'ait_app','static'),
+)
+
 MEDIA_URL = '/site_media/'
 
 # URL prefix for admin media -- CSS, JavaScript and images. Make sure to use a

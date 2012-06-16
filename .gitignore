@@ -1,0 +1,9 @@
+.project
+.pydevproject
+.DS_Store
+lib/*
+bin/*
+include/*
+*.pyc
+site_media/static
+
